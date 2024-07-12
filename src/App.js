@@ -24,7 +24,9 @@ const initialFriends = [
 export default function App() {
   return (
     <div className="app">
-      <div className="sidebar"></div>
+      <div className="sidebar">
+        <FriendsList />
+      </div>
     </div>
   );
 }
@@ -32,9 +34,35 @@ export default function App() {
 function FriendsList() {
   const friends = initialFriends;
 
-  return <ul></ul>;
+  return (
+    <ul>
+      {friends.map((el) => (
+        <Friend el={el} key={el.id} />
+      ))}
+    </ul>
+  );
 }
 
-function Friend() {
-  return <li></li>;
+function Friend({ el }) {
+  return (
+    <li>
+      <img src={el.image} alt={el.name} />
+      <h3>{el.name}</h3>
+      {el.balance < 0 && (
+        <p className="red">
+          You owe {el.name} {Math.abs(el.balance)}€
+        </p>
+      )}
+
+      {el.balance > 0 && (
+        <p className="green">
+          {el.name} owes you {el.balance}€
+        </p>
+      )}
+
+      {el.balance === 0 && <p>You are even</p>}
+
+      <button className="button">Select</button>
+    </li>
+  );
 }
