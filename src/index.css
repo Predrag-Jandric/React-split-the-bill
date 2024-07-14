@@ -147,6 +147,7 @@ select {
   border: 1px solid var(--color-light);
   border-radius: 4px;
   transition: 0.3s;
+  
 }
 
 input:focus,
