@@ -1,6 +1,6 @@
 # React - Split the bill
 
-# 🔗 [Live Preview]()
+# 🔗 [Live Preview](https://669594a6588c7db07cbd88bf--loquacious-cannoli-0a6828.netlify.app/)
 
 ![Design preview](./public/preview.png)
 
